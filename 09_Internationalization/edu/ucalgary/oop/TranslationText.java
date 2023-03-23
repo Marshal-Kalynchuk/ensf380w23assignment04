@@ -1,19 +1,22 @@
 package edu.ucalgary.oop;
 
+import java.io.Serializable;
+
 /* TranslationText
  * Serializable representation of the data file. Has the serialVersionUID of 19L.
  * Member data names should be based on those implied by the getters. Member data are not final.
 */
-public class TranslationText {
+public class TranslationText implements Serializable {
 
   private String[] months;
   private String[] days;
-  private String formatting;
+  private String sentence;
+  private static final long serialVersionUID = 19L;
 
   /* getSentence()
    * Getter method, returns String
   */
-  public String geSentence() { return null; }
+  public String getSentence() { return this.sentence; }
 
   /* getMonths()
    * Getter method, returns String[]
@@ -47,8 +50,10 @@ public class TranslationText {
    * Accepts a String array of months, a String array of days, and a String 
    * containing a sentence with formatting.
   */
-  public TranslationText(String[] months, String[] days, String formatting) {
-
+  public TranslationText(String[] months, String[] days, String sentence) {
+    this.months = months;
+    this.days = days;
+    this.sentence = sentence;
   }
 
 }
